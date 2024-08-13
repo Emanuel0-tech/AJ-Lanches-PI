@@ -78,7 +78,7 @@ html {
 
 .first-section {
     height: 100vh;
-    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)) ,url("https://static.vecteezy.com/ti/vetor-gratis/p1/25770462-delicioso-velozes-comida-lanche-com-hamburguer-coca-e-fresco-legumes-em-uma-branco-fundo-ilustracao-hamburguer-coca-quente-e-picante-frances-fritas-ilustracao-vetor.jpg");
+    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)),url("https://static.vecteezy.com/ti/vetor-gratis/p1/25770462-delicioso-velozes-comida-lanche-com-hamburguer-coca-e-fresco-legumes-em-uma-branco-fundo-ilustracao-hamburguer-coca-quente-e-picante-frances-fritas-ilustracao-vetor.jpg");
     background-position: center center;
     background-size: 1940px 865px;
     background-repeat: no-repeat;
@@ -129,7 +129,6 @@ html {
     border: 1px solid #ffc506;
     background-color: transparent;
     color: #ffc506;
-    animation-timing-function: botao;
 }
 
 .btn {
@@ -138,11 +137,19 @@ html {
     justify-content: space-between;
 }
 
-@keyframes botao {
-    from {
-        scale: 1.0;
+.btn button:hover {
+    animation-name: animacao;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animacao {
+    0% {
+        transform: scale(1.0);
     }
-    to {
-        scale: 1.05;
+    100% {
+        transform: scale(1.05);
     }
 }
