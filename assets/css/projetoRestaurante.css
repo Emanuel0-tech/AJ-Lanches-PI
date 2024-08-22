@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Indie+Flower&family=Nerko+One&family=Playwrite+AR:wght@100..400&display=swap');
-
+/* Reseta estilos padrão */
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +6,13 @@
     list-style: none;
     border: none;
     text-decoration: none;
-    font-family: "Indie Flower", cursive;
 }
 
+/* Estilo básico do HTML */
 html {
     width: 100vw;
     height: 100vh;
     font-size: 62.5%;
-    /* overflow: hidden; */
     overflow-x: hidden;
 }
 
@@ -24,43 +22,43 @@ html {
     width: 100vw;
     height: 70px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #1f1e1f;
     position: fixed;
-    padding-left: 30rem;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 1000;
 }
 
 .logo {
-    width: 70px;
-    height: auto;
-    cursor: pointer;
     display: flex;
     align-items: center;
-}
-
-.logo h3 {
-    color: white;
-    font-size: 1.6rem;
 }
 
 .logo img {
-    width: 100%;
-    height: 100%;
+    width: 60px;
+    height: auto;
 }
 
-.content .list-menu {
-    width: 600px;
+nav {
+    flex: 1;
+}
+
+.list-menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 600px;
 }
 
-.content .list-menu li a {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
+.list-menu li {
+    padding: 0 10px;
+    /* Ajustado para centralizar o menu */
+}
+
+.list-menu li a {
     color: white;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -68,27 +66,28 @@ html {
     transition: all 200ms ease-in;
 }
 
-.content .list-menu li a:hover {
+.list-menu li a:hover {
     background-color: #3333;
     border-bottom: 4px solid #ffc506;
     color: #ffc506;
-
 }
 
 /* first-section */
 
 .first-section {
     height: 100vh;
-    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)) ,url("https://static.vecteezy.com/ti/vetor-gratis/p1/25770462-delicioso-velozes-comida-lanche-com-hamburguer-coca-e-fresco-legumes-em-uma-branco-fundo-ilustracao-hamburguer-coca-quente-e-picante-frances-fritas-ilustracao-vetor.jpg");
+    background-image: linear-gradient(rgba(29, 29, 29, 0.8), rgba(29, 29, 29, 0.8)), url("https://static.vecteezy.com/ti/vetor-gratis/p1/25770462-delicioso-velozes-comida-lanche-com-hamburguer-coca-e-fresco-legumes-em-uma-branco-fundo-ilustracao-hamburguer-coca-quente-e-picante-frances-fritas-ilustracao-vetor.jpg");
     background-position: center center;
-    background-size: 1940px 865px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: 50px;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    text-align: center;
+    padding-top: 70px;
+    /* Espaço para a barra de navegação */
 }
 
 .first-section .conteudo-principal {
@@ -96,6 +95,18 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.first-section .logo {
+    margin-bottom: 2rem;
+}
+
+.first-section .logo img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    z-index: 10;
 }
 
 .first-section h1 {
@@ -111,6 +122,13 @@ html {
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 3rem;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .btn button {
@@ -132,12 +150,6 @@ html {
     color: #ffc506;
 }
 
-.btn {
-    width: 480px;
-    display: flex;
-    justify-content: space-between;
-}
-
 button:hover {
     animation-name: botao;
     animation-duration: 0.5s;
@@ -150,6 +162,7 @@ button:hover {
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.05);
     }
@@ -160,24 +173,25 @@ button:hover {
 .sobre-nos {
     background-color: #1f1e1f;
     width: 100%;
-    padding-bottom: 5rem;
+    padding: 5rem 0;
     color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .sobre-nos img {
-    width: 400px;
-    height: 400px;
-    margin-top: 10rem;
-    margin-left: 10rem;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     border: 2px solid rgb(155, 155, 155);
 }
 
 .main {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contentsobre {
@@ -188,14 +202,14 @@ button:hover {
 }
 
 .contentsobre h2 {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
 .contentsobre p {
     text-align: center;
     font-size: 1.8rem;
-    width: 600px;
+    max-width: 600px;
 }
 
 /* Cardápio */
@@ -207,20 +221,28 @@ button:hover {
     align-items: center;
     justify-content: center;
     background-color: rgba(12, 12, 12, 0.8);
+    padding: 2rem 0;
 }
 
 .cardapio h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: #e6e6e6;
     text-transform: uppercase;
 }
 
+.cardapio h1 {
+    font-size: 4rem;
+    color: #ffc506;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
 .itens-cardapio {
-    width: 80%;
+    width: 90%;
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 550px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: center;
     align-items: center;
     gap: 30px;
@@ -228,7 +250,6 @@ button:hover {
 
 .itens-cardapio .info {
     background-color: rgb(221, 221, 221);
-    border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -237,7 +258,7 @@ button:hover {
 }
 
 .itens-cardapio .info h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
     text-decoration: underline;
@@ -248,16 +269,12 @@ button:hover {
     text-transform: uppercase;
     margin-bottom: 0.6rem;
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 150px 150px;
-    margin-left: 6rem;
+    grid-template-columns: 1fr 1fr;
 }
 
 .itens-cardapio .info h4 span {
     font-size: 1.6rem;
     color: #585858;
-    margin-left: 1.5rem;
     text-decoration: underline;
 }
 
@@ -268,11 +285,12 @@ button:hover {
 
 .itens-cardapio img {
     width: 100%;
-    height: 200px;
+    height: auto;
 }
 
 .itens-cardapio .info .pedir {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: 35px;
     margin-top: 0.5rem;
     background-color: #ffc506;
@@ -299,18 +317,21 @@ button:hover {
     align-items: center;
     font-size: 1.8rem;
     color: white;
-    padding-bottom: 4rem;
+    padding: 4rem 0;
+    text-align: center;
 }
 
 .contatos h3 {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 3rem;
 }
 
 .contatos-secao {
-    width: 650px;
+    width: 90%;
+    max-width: 650px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     font-size: 2rem;
 }
 
@@ -337,3 +358,83 @@ footer {
     justify-content: center;
 }
 
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-menu {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-menu li {
+        padding: 10px;
+    }
+
+    .list-menu li a {
+        font-size: 1.6rem;
+    }
+
+    .first-section {
+        padding-top: 70px;
+        /* Ajustado para o menu fixo */
+    }
+
+    .first-section h1 {
+        font-size: 4rem;
+    }
+
+    .first-section h2 {
+        font-size: 2rem;
+    }
+
+    .btn button {
+        width: 100%;
+        max-width: 230px;
+        font-size: 1.4rem;
+    }
+
+    .sobre-nos img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .contentsobre h2 {
+        font-size: 3rem;
+    }
+
+    .contentsobre p {
+        font-size: 1.6rem;
+        max-width: 100%;
+    }
+
+    .itens-cardapio {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .itens-cardapio .info h3 {
+        font-size: 1.4rem;
+    }
+
+    .itens-cardapio .info h4 {
+        font-size: 1.2rem;
+    }
+
+    .itens-cardapio .info h4 span {
+        font-size: 1.4rem;
+    }
+
+    .contatos-secao {
+        font-size: 1.8rem;
+    }
+
+    .contatos h3 {
+        font-size: 3rem;
+    }
+}
