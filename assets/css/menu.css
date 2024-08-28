@@ -1,87 +1,87 @@
-.menu {
-    width: 100vw;
+/* Definindo variáveis de cor e imagem de fundo */
+:root {
+    --cor-fundo: #f5f5f5;
+    --cor-principal: #ff5733;
+    --cor-secundaria: #333;
+    --cor-header-footer: #222;
+    --cor-botao: #ffffff;
+    --imagem-fundo: url("../images/bg.jpg");
+    --cor-overlap: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
+  }
+  
+  /* Estilo principal da seção de menu */
+  .menu {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--cor-fundo);
+    position: relative; /* Garante que o conteúdo da seção esteja acima da sobreposição */
+  }
+  
+  /* Estilo para os títulos das seções */
+  h2 {
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  h3 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  /* Estilo das categorias do menu */
+  .menu-category {
+    margin-bottom: 40px;
+  }
+  
+  /* Estilo para os itens do menu */
+  .menu-items {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(12, 12, 12, 0.8);
-}
-
-.menu h2 {
-    font-size: 5rem;
-    color: #e6e6e6;
-    text-transform: uppercase;
-}
-
-.menu-items {
-    width: 80%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 550px));
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-.menu-items .price-items {
-    background-color: rgb(221, 221, 221);
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-}
-
-.menu-items .price-items h3 {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    text-decoration: underline;
-}
-
-.menu-items .price-items h4 {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 150px 150px;
-    margin-left: 6rem;
-}
-
-.menu-items .price-items h4 br {
-    font-size: 1.6rem;
-    color: #585858;
-    margin-left: 1.5rem;
-    text-decoration: underline;
-}
-
-.menu-items div {
-    background-color: #5e5252;
-    box-shadow: 0px 0px 4px 1px;
-}
-
-.menu-items img {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Estilo para cada item de comida */
+  .food-item {
+    flex: 1 1 calc(20% - 20px); /* Ajuste para 5 itens por linha com espaçamento */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .food-item img {
     width: 100%;
-    height: 200px;
-}
-
-.menu-items .price-items .btn-ask {
-    width: 200px;
-    height: 35px;
-    margin-top: 0.5rem;
-    background-color: #ffc506;
+    height: auto;
+  }
+  
+  .price-info {
+    padding: 15px;
+    background-color: var(--cor-fundo);
+  }
+  
+  .price-info h4 {
+    color: var(--cor-secundaria);
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .btn-ask {
+    background-color: var(--cor-principal);
+    color: var(--cor-botao);
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    text-transform: uppercase;
     cursor: pointer;
-    color: black;
-    transition: all 200ms ease-in;
-}
-
-.menu-items .price-items .p:hover {
-    background-color: #5e5252;
-    color: white;
-}
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-ask:hover {
+    background-color: #e03a00; /* Efeito de hover escurecendo a cor principal */
+    transform: translateY(-2px);
+  }
+  

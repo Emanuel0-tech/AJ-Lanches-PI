@@ -1,142 +1,135 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  body {
-    background-color: #f0f0f0; /* Fundo claro neutro para contraste */
-    color: #333; /* Texto padrão */
-  }
-  
-  #header, #footer {
-    background-color: #000; /* Preto para cabeçalho e rodapé */
-    color: #fff; /* Texto branco para contraste */
-    padding: 20px 0;
-    text-align: center;
-    font-size: 18px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    color: #ff4500; /* Laranja para títulos principais */
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  
-  /* Seção de contato */
-  .contact {
-    padding: 40px;
-    background-color: #fff; /* Fundo branco para a seção de contato */
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    margin: 40px auto;
-  }
-  
-  .content {
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  
-  .contactInfo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-  }
-  
-  .box {
-    flex: 1 1 calc(50% - 30px); /* 2 caixas por linha com espaçamento */
-    background-color: #ffeb3b; /* Amarelo claro para as caixas de informações */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-  }
-  
-  .box .icon {
-    font-size: 32px;
-    color: #000; /* Preto para ícones */
-    margin-right: 15px;
-  }
-  
-  .box .text {
-    flex: 1;
-  }
-  
-  .box .text h2 {
-    color: #000; /* Preto para subtítulos */
-    font-size: 18px;
-  }
-  
-  .contactform {
-    background-color: #fff; /* Fundo branco para o formulário */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contactform form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .inputBox {
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  .inputBox input,
-  .inputBox textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #ff4500; /* Laranja para bordas de campos */
-    border-radius: 8px;
-    background-color: #fff;
-    color: #333;
-    font-size: 16px;
-  }
-  
-  .inputBox textarea {
-    height: 120px;
-    resize: vertical;
-  }
-  
-  .inputBox span {
-    position: absolute;
-    top: 14px;
-    left: 20px;
-    color: #aaa;
-    transition: 0.3s;
-  }
-  
-  .inputBox input:focus + span,
-  .inputBox textarea:focus + span,
-  .inputBox input:not(:placeholder-shown) + span,
-  .inputBox textarea:not(:placeholder-shown) + span {
-    top: -10px;
-    left: 15px;
-    color: #ff4500; /* Laranja para label em foco */
-    font-size: 12px;
-  }
-  
-  .inputBox input[type="submit"] {
-    background-color: #ff4500; /* Laranja para o botão de envio */
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .inputBox input[type="submit"]:hover {
-    background-color: #e03a00; /* Tom mais escuro de laranja para hover */
-    transform: translateY(-2px); /* Efeito de elevação no hover */
-  }
-  
+:root {
+  --cor-fundo: #f5f5f5; /* Cor de fundo geral */
+  --cor-principal: #ff5733; /* Cor principal dos botões e destaques */
+  --cor-secundaria: #333; /* Cor do texto */
+  --cor-header-footer: #222; /* Cor do cabeçalho e rodapé */
+  --cor-botao: #ffffff; /* Cor do texto do botão */
+  --imagem-fundo: url("../images/bg.jpg"); /* URL da imagem de fundo */
+  --cor-titulo: #ff4500; /* Laranja para títulos principais */
+  --cor-caixa: #ffeb3b; /* Amarelo claro para as caixas de informações */
+  --cor-icone: #000; /* Preto para ícones */
+  --cor-borda-campo: #ff4500; /* Laranja para bordas de campos */
+  --cor-label-foco: #ff4500; /* Laranja para label em foco */
+  --cor-botao-enviar: #ff4500; /* Laranja para o botão de envio */
+  --cor-botao-enviar-hover: #e03a00; /* Tom mais escuro de laranja para hover */
+}
+
+h2 {
+  color: var(--cor-titulo); /* Laranja para títulos principais */
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Seção de contato */
+.contact {
+  padding: 40px;
+  background-color: var(--cor-fundo); /* Fundo branco para a seção de contato */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.content {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contactInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.box {
+  flex: 1 1 calc(50% - 30px); /* 2 caixas por linha com espaçamento */
+  background-color: var(--cor-caixa); /* Amarelo claro para as caixas de informações */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.box .icon {
+  font-size: 32px;
+  color: var(--cor-icone); /* Preto para ícones */
+  margin-right: 15px;
+}
+
+.box .text {
+  flex: 1;
+}
+
+.box .text h2 {
+  color: var(--cor-secundaria); /* Preto para subtítulos */
+  font-size: 18px;
+}
+
+.contactform {
+  background-color: var(--cor-fundo); /* Fundo branco para o formulário */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contactform form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--cor-borda-campo); /* Laranja para bordas de campos */
+  border-radius: 8px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-secundaria);
+  font-size: 16px;
+}
+
+.inputBox textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.inputBox span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.inputBox input:focus + span,
+.inputBox textarea:focus + span,
+.inputBox input:not(:placeholder-shown) + span,
+.inputBox textarea:not(:placeholder-shown) + span {
+  top: -10px;
+  left: 15px;
+  color: var(--cor-label-foco); /* Laranja para label em foco */
+  font-size: 12px;
+}
+
+.inputBox input[type="submit"] {
+  background-color: var(--cor-botao-enviar); /* Laranja para o botão de envio */
+  color: var(--cor-botao);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.inputBox input[type="submit"]:hover {
+  background-color: var(--cor-botao-enviar-hover); /* Tom mais escuro de laranja para hover */
+  transform: translateY(-2px); /* Efeito de elevação no hover */
+}

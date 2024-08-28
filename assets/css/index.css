@@ -1,12 +1,4 @@
 /* Reseta margin, padding e border */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
-}
-
-/* Estilos gerais */
 :root {
   --cor-fundo: #f5f5f5; /* Cor de fundo geral */
   --cor-principal: #ff5733; /* Cor principal dos botões e destaques */
@@ -15,6 +7,14 @@
   --cor-botao: #ffffff; /* Cor do texto do botão */
   --imagem-fundo: url("../images/bg.jpg"); /* URL da imagem de fundo */
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+/* Estilos gerais */
 
 body {
   background-color: var(--cor-fundo);
