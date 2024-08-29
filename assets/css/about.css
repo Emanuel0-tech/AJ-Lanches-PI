@@ -1,0 +1,59 @@
+:root {
+  --cor-fundo: #f5f5f5;
+  --cor-principal: #ff5733;
+  --cor-secundaria: #333;
+  --cor-header-footer: #222;
+  --cor-botao: #fff;
+  --imagem-fundo: url('../images/bg.jpg');
+}
+
+/* Classes utilitárias */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Seção sobre nós */
+.sobre-nos {
+  padding: 40px;
+}
+
+.sobre-nos__main {
+  .container;
+  display: flex;
+}
+
+.sobre-nos__content {
+  flex: 1;
+}
+
+.sobre-nos__image {
+  flex: 1;
+  .text-center;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Media query */
+@media (max-width: 768px) {
+  .sobre-nos__main {
+    flex-direction: column;
+  }
+
+  .sobre-nos__content,
+  .sobre-nos__image {
+    width: 100%;
+  }
+}

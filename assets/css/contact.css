@@ -1,135 +1,118 @@
+/* Base Styles */
 :root {
-  --cor-fundo: #f5f5f5; /* Cor de fundo geral */
-  --cor-principal: #ff5733; /* Cor principal dos botões e destaques */
-  --cor-secundaria: #333; /* Cor do texto */
-  --cor-header-footer: #222; /* Cor do cabeçalho e rodapé */
-  --cor-botao: #ffffff; /* Cor do texto do botão */
-  --imagem-fundo: url("../images/bg.jpg"); /* URL da imagem de fundo */
-  --cor-titulo: #ff4500; /* Laranja para títulos principais */
-  --cor-caixa: #ffeb3b; /* Amarelo claro para as caixas de informações */
-  --cor-icone: #000; /* Preto para ícones */
-  --cor-borda-campo: #ff4500; /* Laranja para bordas de campos */
-  --cor-label-foco: #ff4500; /* Laranja para label em foco */
-  --cor-botao-enviar: #ff4500; /* Laranja para o botão de envio */
-  --cor-botao-enviar-hover: #e03a00; /* Tom mais escuro de laranja para hover */
+  --cor-fundo: #f5f5f5;
+  --cor-principal: #ff5733;
+  --cor-secundaria: #333;
+  --cor-header-footer: #222;
+  --cor-botao: #ffffff;
+  --imagem-fundo: url("../images/bg.jpg");
+  --cor-overlap: rgba(0, 0, 0, 0.4);
 }
 
-h2 {
-  color: var(--cor-titulo); /* Laranja para títulos principais */
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-/* Seção de contato */
+/* Estilo para a seção de contato */
 .contact {
+  background-color: var(--cor-fundo);
   padding: 40px;
-  background-color: var(--cor-fundo); /* Fundo branco para a seção de contato */
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-.content {
-  margin-bottom: 40px;
   text-align: center;
 }
 
-.contactInfo {
+/* Estilo para o conteúdo principal */
+.contact .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo para a área de informações de contato e formulário */
+.contact .container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Estilo para as informações de contato */
+.contact .contactInfo {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: space-between;
 }
 
-.box {
-  flex: 1 1 calc(50% - 30px); /* 2 caixas por linha com espaçamento */
-  background-color: var(--cor-caixa); /* Amarelo claro para as caixas de informações */
+.contact .contactInfo .box {
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
+  text-align: center;
+  width: calc(33.33% - 20px); /* 3 colunas com espaçamento */
 }
 
-.box .icon {
-  font-size: 32px;
-  color: var(--cor-icone); /* Preto para ícones */
-  margin-right: 15px;
+.contact .contactInfo .icon {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.box .text {
+/* Estilo para o formulário de contato */
+.contact .contactform {
   flex: 1;
 }
 
-.box .text h2 {
-  color: var(--cor-secundaria); /* Preto para subtítulos */
-  font-size: 18px;
-}
-
-.contactform {
-  background-color: var(--cor-fundo); /* Fundo branco para o formulário */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.contactform form {
+.contact .contactform form {
   display: flex;
   flex-direction: column;
 }
 
-.inputBox {
+.contact .contactform .inputBox {
   margin-bottom: 20px;
-  position: relative;
 }
 
-.inputBox input,
-.inputBox textarea {
+.contact .contactform .inputBox input,
+.contact .contactform .inputBox textarea {
   width: 100%;
-  padding: 15px;
-  border: 2px solid var(--cor-borda-campo); /* Laranja para bordas de campos */
-  border-radius: 8px;
-  background-color: var(--cor-fundo);
-  color: var(--cor-secundaria);
-  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.inputBox textarea {
-  height: 120px;
-  resize: vertical;
-}
-
-.inputBox span {
+.contact .contactform .inputBox span {
   position: absolute;
-  top: 14px;
-  left: 20px;
-  color: #aaa;
-  transition: 0.3s;
-}
-
-.inputBox input:focus + span,
-.inputBox textarea:focus + span,
-.inputBox input:not(:placeholder-shown) + span,
-.inputBox textarea:not(:placeholder-shown) + span {
-  top: -10px;
+  top: 12px;
   left: 15px;
-  color: var(--cor-label-foco); /* Laranja para label em foco */
-  font-size: 12px;
-}
-
-.inputBox input[type="submit"] {
-  background-color: var(--cor-botao-enviar); /* Laranja para o botão de envio */
-  color: var(--cor-botao);
-  border: none;
-  cursor: pointer;
+  padding: 5px;
   font-size: 16px;
-  padding: 15px;
-  border-radius: 8px;
-  transition: background-color 0.3s, transform 0.3s;
+  color: #666;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
-.inputBox input[type="submit"]:hover {
-  background-color: var(--cor-botao-enviar-hover); /* Tom mais escuro de laranja para hover */
-  transform: translateY(-2px); /* Efeito de elevação no hover */
+.contact .contactform .inputBox input:focus ~ span,
+.contact .contactform .inputBox input:valid ~ span,
+.contact .contactform .inputBox textarea:focus ~ span,
+.contact .contactform .inputBox textarea:valid ~ span {
+  top: -10px;
+  font-size: 12px;
+  color: var(--cor-principal);
+}
+
+.contact .contactform .inputBox input[type="submit"] {
+  background-color: var(--cor-principal);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Para telas menores (por exemplo, smartphones) */
+@media (max-width: 768px) {
+  .contact .container {
+    flex-direction: column; /* Empilha as colunas */
+  }
+
+  .contact .contactInfo,
+  .contact .contactform {
+    width: 100%; /* Cada seção ocupa 100% da largura */
+  }
+
+  /* Outros ajustes para telas menores */
+  .contact .contactInfo .box {
+    width: 100%; /* Cada caixa ocupa 100% da largura */
+  }
+
+  /* ... outros ajustes ... */
 }

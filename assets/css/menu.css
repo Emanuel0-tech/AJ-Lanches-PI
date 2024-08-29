@@ -1,87 +1,148 @@
-/* Definindo variáveis de cor e imagem de fundo */
 :root {
-    --cor-fundo: #f5f5f5;
-    --cor-principal: #ff5733;
-    --cor-secundaria: #333;
-    --cor-header-footer: #222;
-    --cor-botao: #ffffff;
-    --imagem-fundo: url("../images/bg.jpg");
-    --cor-overlap: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
-  }
-  
-  /* Estilo principal da seção de menu */
-  .menu {
-    padding: 40px;
-    max-width: 1200px;
-    margin: auto;
-    background-color: var(--cor-fundo);
-    position: relative; /* Garante que o conteúdo da seção esteja acima da sobreposição */
-  }
-  
-  /* Estilo para os títulos das seções */
-  h2 {
-    color: var(--cor-principal);
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
-  
-  h3 {
-    color: var(--cor-principal);
-    margin-bottom: 10px;
-    font-size: 20px;
-  }
-  
-  /* Estilo das categorias do menu */
-  .menu-category {
-    margin-bottom: 40px;
-  }
-  
-  /* Estilo para os itens do menu */
-  .menu-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  /* Estilo para cada item de comida */
+  --cor-fundo: #f5f5f5;
+  --cor-principal: #ff5733;
+  --cor-secundaria: #333;
+  --cor-header-footer: #222;
+  --cor-botao: #fff;
+  --imagem-fundo: url('../images/bg.jpg');
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-secundaria);
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background: var(--cor-header-footer);
+}
+
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: var(--cor-botao);
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background: #000;
+}
+
+.first-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: var(--imagem-fundo) no-repeat center center/cover;
+  color: var(--cor-botao);
+  min-height: 100vh;
+}
+
+.conteudo-principal {
+  max-width: 600px;
+}
+
+h2, h3 {
+  color: var(--cor-principal);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.food-item {
+  flex: 1 1 calc(20% - 20px);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.food-item img {
+  width: 100%;
+}
+
+.price-info {
+  padding: 15px;
+  background: var(--cor-fundo);
+}
+
+.price-info h4 {
+  color: var(--cor-secundaria);
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
+.btn button {
+  background: var(--cor-principal);
+  color: var(--cor-botao);
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.btn button:hover {
+  background: rgba(255, 87, 51, .8);
+}
+
+/* ... resto do código ... */
+/* ... código existente ... */
+
+/* Adicionando uma classe para o container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Aplicando a classe ao menu */
+.menu {
+  /* ... outras propriedades ... */
+  width: 100%;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
   .food-item {
-    flex: 1 1 calc(20% - 20px); /* Ajuste para 5 itens por linha com espaçamento */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* 2 itens por linha */
   }
-  
-  .food-item img {
-    width: 100%;
-    height: auto;
+
+  /* Ajustando o espaçamento entre os itens para telas menores */
+  .menu-items {
+    gap: 10px;
   }
-  
-  .price-info {
-    padding: 15px;
-    background-color: var(--cor-fundo);
+}
+
+@media (max-width: 480px) {
+  .food-item {
+    flex: 1 1 100%; /* 1 item por linha */
   }
-  
-  .price-info h4 {
-    color: var(--cor-secundaria);
-    font-size: 16px;
-    margin: 10px 0;
-  }
-  
-  .btn-ask {
-    background-color: var(--cor-principal);
-    color: var(--cor-botao);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .btn-ask:hover {
-    background-color: #e03a00; /* Efeito de hover escurecendo a cor principal */
-    transform: translateY(-2px);
-  }
-  
+}
